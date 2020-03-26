@@ -2,7 +2,7 @@
 html {
     --grey: #e7e7e7;
     --gray: var(--grey);
-    --blue: #0072B9;
+    --blue: #5a9dc7;
     --pink: #D60087;
     --yellow: #ffc600;
     --black: #2e2e2e;
@@ -70,7 +70,7 @@ a.button,
 button,
 input[type="button"] {
     color: white;
-    background: var(--pink);
+    background: var(--blue);
     padding: 1rem;
     border: 0;
     border: 2px solid transparent;
