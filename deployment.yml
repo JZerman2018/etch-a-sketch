@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopscapstone
+  labels:
+    app: devopscapstone
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: devopscapstone
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: devopscapstone
+    spec:
+      containers:
+      - image: jzerman2018/devopscapstone:latest
+        imagePullPolicy: Always
+        name: devopscapstone
+        ports:
+        - containerPort: 80
+          protocol: TCP
