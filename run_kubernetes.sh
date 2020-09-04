@@ -3,7 +3,10 @@
 # This tags and uploads an image to Docker Hub
 
 # Step 1:
-/home/ubuntu/.local/bin/aws eks --region us-east-1 update-kubeconfig --name devopscapstone-cluster
+# /home/ubuntu/.local/bin/aws eks --region us-east-1 update-kubeconfig --name devopscapstone-cluster
+# Dockerpath ID
+dockerpath="jzerman2018/devopscapstone"
+
 
 
 # Step 2
