@@ -14,7 +14,7 @@ pipeline {
          stage('Lint Dockerfile') {
             steps {
                 script {
-                    docker.image('hadolint/hadolint:latest-alpine').inside() {
+                    // docker.image('hadolint/hadolint:latest-alpine').inside() {
                             sh 'hadolint ./Dockerfile | tee -a hadolint_lint.txt'
                             sh '''
                                 lintErrors=$(stat --printf="%s"  hadolint_lint.txt)
