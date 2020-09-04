@@ -32,7 +32,7 @@ pipeline {
 
         stage('Aqua Microscanner Security Scan') {
               steps {
-                 aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+                 aquaMicroscanner imageName: 'node:12-alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
               }
          }
          stage('Build Docker Image') {
