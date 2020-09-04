@@ -1,0 +1,13 @@
+{
+    "name": "devopscapstone-project",
+    "version": "1.0.0",
+    "engines": {
+        "npm": "6.x"
+    },
+    "author": "juwana-zerman",
+    "license": "ISC",
+    "dependencies": {
+        "@cloudcomponents/cdk-codepipeline-dockerfile-linter-action": "^1.0.25",
+        "htmltidy": "0.0.6"
+    }
+}
