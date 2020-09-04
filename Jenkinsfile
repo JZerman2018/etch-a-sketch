@@ -6,15 +6,15 @@ pipeline {
                   sh 'echo Building...'
               }
          }
-        //  stage('Lint HTML') {
-        //       steps {
-        //           sh 'tidy -q -e *.html'
-        //       }
-        //  }
+         stage('Lint HTML') {
+              steps {
+                  sh 'tidy -q -e *.html'
+              }
+         }
          stage('Lint Dockerfile') {
             steps {
                 script {
-                    // docker.image('hadolint/hadolint:latest-alpine').inside() {
+                    docker.image('hadolint/hadolint:latest-alpine').inside() {
                             sh 'hadolint ./Dockerfile | tee -a hadolint_lint.txt'
                             sh '''
                                 lintErrors=$(stat --printf="%s"  hadolint_lint.txt)
@@ -29,12 +29,12 @@ pipeline {
                     }
                 }
             }
-
-        // stage('Aqua Microscanner Security Scan') {
-        //       steps {
-        //          aquaMicroscanner imageName: 'node:12-alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
-        //       }
-        //  }
+        }
+        stage('Aqua Microscanner Security Scan') {
+              steps {
+                 aquaMicroscanner imageName: 'node:12-alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+              }
+         }
          stage('Build Docker Image') {
             steps {
                 sh './run_docker.sh'
