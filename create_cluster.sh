@@ -3,7 +3,7 @@ eksctl create cluster \
   --region us-east-1 \
   --name=devopscapstone \
   --ssh-access=true \
-  --ssh-public-key=jenkins_key \
+  --ssh-public-key=jenkinsdevopsc3 \
   --nodegroup-name=capstone-workers \
   --node-type=t3.medium \
   --nodes=3 \
