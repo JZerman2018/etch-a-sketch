@@ -27,3 +27,17 @@ spec:
         ports:
         - containerPort: 80
           protocol: TCP
+
+---
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: devopscapstone
+  spec:
+    type: LoadBalancer
+    selector:
+      app: devopscapstone
+    ports:
+      - name: http
+        protocol: TCP
+        port: 80
