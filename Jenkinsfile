@@ -29,7 +29,7 @@ pipeline {
                     }
                 }
             }
-        
+
         stage('Aqua Microscanner Security Scan') {
               steps {
                  aquaMicroscanner imageName: 'alpine:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
@@ -51,9 +51,10 @@ pipeline {
             }
         }
         stage("Clean Up System") {
-              steps{
+              steps {
                     echo 'Cleaning up...'
                     sh "docker system prune"
               }
         }
      }
+}
