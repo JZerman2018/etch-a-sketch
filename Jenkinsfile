@@ -26,11 +26,11 @@ pipeline {
                 }
             }
         }
-        stage('Aqua Microscanner Security Scan') {
-              steps {
-                 aquaMicroscanner imageName: 'node:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
-              }
-         }
+        // stage('Aqua Microscanner Security Scan') {
+        //       steps {
+        //          aquaMicroscanner imageName: 'node:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+        //       }
+        //  }
          stage('Build Docker Image') {
             steps {
                 sh './run_docker.sh'
