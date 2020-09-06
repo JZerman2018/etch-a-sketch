@@ -11,9 +11,11 @@ pipeline {
         //           sh 'tidy -q -e *.html'
         //       }
         //  }
-         stage('Lint Dockerfile') {
-            docker {
-                image 'hadolint/hadolint:latest-debian'
+         stage ('Lint Dockerfile') {
+            agent {
+                docker {
+                    image 'hadolint/hadolint:latest-debian'
+                }
             }
             steps {
                 sh 'hadolint ./Dockerfile | tee -a hadolint_lint.txt'
