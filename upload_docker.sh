@@ -9,7 +9,7 @@ dockerpath="jzerman2018/devopscapstone"
 #Step 2:
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
-docker login --username $1 --password $2
+#docker login --username jzerman2018
 docker image tag devopscapstone $dockerpath:latest
 
 # Step 3:
