@@ -12,11 +12,15 @@ pipeline {
         //       }
         //  }
          stage('Lint Dockerfile') {
+            docker {
+                image 'hadolint/hadolint:latest-debian'
+            }
             steps {
-                script {
-                    docker.image('hadolint/hadolint:latest-debian').inside() {
-                            sh 'hadolint ./Dockerfile'
-                    }
+                sh 'hadolint ./Dockerfile' | tee -a hadolint_lint.txt'
+            }
+            post {
+                always {
+                    archiveArtifacts 'hadolint_lint.txt'
                 }
             }
         }
