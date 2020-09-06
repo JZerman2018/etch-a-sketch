@@ -9,9 +9,9 @@ dockerpath="jzerman2018/devopscapstone"
 #Step 2:
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
-docker login &&\ 
-    docker image tag devopscapstone $dockerpath
+docker login --username $1 --password $2
+docker image tag devopscapstone $dockerpath:latest
 
 # Step 3:
 # Push image to a docker repository
-docker push $dockerpath
+docker push $dockerpath:latest
