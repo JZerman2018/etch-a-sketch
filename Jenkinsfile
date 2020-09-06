@@ -16,7 +16,7 @@ pipeline {
                 image 'hadolint/hadolint:latest-debian'
             }
             steps {
-                sh 'hadolint ./Dockerfile' | tee -a hadolint_lint.txt'
+                sh 'hadolint ./Dockerfile | tee -a hadolint_lint.txt'
             }
             post {
                 always {
