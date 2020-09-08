@@ -1,5 +1,5 @@
 eksctl create cluster \
-  --version 1.15 \
+  --version 1.17 \
   --region us-east-1 \
   --name=devopscapstone \
   --ssh-access=true \
@@ -9,4 +9,3 @@ eksctl create cluster \
   --nodes=3 \
   --nodes-min=1 \
   --nodes-max=4
-  --node-ami auto
