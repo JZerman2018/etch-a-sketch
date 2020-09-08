@@ -10,4 +10,4 @@ docker images ls
 
 #Step 3:
 # Run app
-docker run -d -p 8000:8000 devopscapstone
+docker run -d -p 9000:9000 devopscapstone
