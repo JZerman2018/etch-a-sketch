@@ -38,7 +38,9 @@ pipeline {
         }
         stage('Push Docker Image') {
             steps {
-                sh './upload_docker.sh'
+                withDockerRegistry([url: "", credentialsId: "dockerhub"]) {
+                    sh './upload_docker.sh'
+                }
             }
         }
         stage('Deploy') {
