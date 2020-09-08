@@ -25,7 +25,7 @@ spec:
         imagePullPolicy: Always
         name: devopscapstone
         ports:
-        - containerPort: 8084
+        - containerPort: 8000
           protocol: TCP
 
 ---
@@ -40,4 +40,4 @@ spec:
     ports:
       - name: http
         protocol: TCP
-        port: 8084
+        port: 8000
