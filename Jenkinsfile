@@ -48,7 +48,11 @@ pipeline {
                 withAWS(credentials: 'aws-static', region: 'us-east-1') {
                 sh "aws eks --region us-east-1 update-kubeconfig --name devopscapstone"
                 sh "kubectl config use-context arn:aws:eks:us-east-1:766162985452:cluster/devopscapstone"
-                sh './run_kubernetes.sh'
+                sh "kubectl apply -f deployment.yml"
+                sh "kubectl get nodes"
+                sh "kubectl get deployments"
+                sh "kubectl get pod -o wide"
+                sh "kubectl get svc"
             }
         }
     }
