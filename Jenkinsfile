@@ -51,6 +51,7 @@ pipeline {
                 sh './run_kubernetes.sh'
             }
         }
+    }
         stage('Clean Up System') {
             steps {
                 echo 'Cleaning up...'
@@ -58,3 +59,4 @@ pipeline {
             }
         }
     }
+}
