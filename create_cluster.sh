@@ -5,7 +5,7 @@ eksctl create cluster \
   --ssh-access=true \
   --ssh-public-key=jenkinsdevopsc3 \
   --nodegroup-name=capstone-workers \
-  --node-type=t2.small \
+  --node-type=t2.micro \
   --nodes=3 \
   --nodes-min=1 \
   --nodes-max=4
