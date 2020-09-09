@@ -2,8 +2,8 @@ pipeline {
      agent any
      stages {
          stage('Build') {
-              steps {
-                  sh 'echo Building...'
+            steps {
+                sh 'echo Building...'
               }
          }
         //  stage('Lint HTML') {
@@ -31,7 +31,7 @@ pipeline {
         //          aquaMicroscanner imageName: 'node:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
         //       }
         //  }
-         stage('Build Docker Image') {
+        stage('Build Docker Image') {
             steps {
                 sh './run_docker.sh'
             }
@@ -51,11 +51,11 @@ pipeline {
                 sh './run_kubernetes.sh'
             }
         }
-        stage("Clean Up System") {
-              steps {
-                    echo 'Cleaning up...'
-                    sh "docker system prune"
-                }
+        stage('Clean Up System') {
+            steps {
+                echo 'Cleaning up...'
+                sh "docker system prune"
             }
         }
     }
+}
