@@ -55,7 +55,7 @@ pipeline {
               steps {
                     echo 'Cleaning up...'
                     sh "docker system prune"
-              }
+                }
+            }
         }
-     }
-}
+    }
