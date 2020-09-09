@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# This tags and uploads an image to Docker Hub
-
 # Step 1:
 # /home/ubuntu/.local/bin/aws eks --region us-east-1 update-kubeconfig --name devopscapstone-cluster
 # Dockerpath ID
@@ -13,11 +11,11 @@ dockerpath="jzerman2018/devopscapstone"
 # Run the Docker Hub container with kubernetes for deployment
 kubectl apply -f deployment.yml
 kubectl get nodes
-kubectl get deployment
+kubectl get deployments
 
 # Step 3:
 # List kubernetes pods
-kubectl get pods
+kubectl get pod -o wide
 
 
 # Step 4:

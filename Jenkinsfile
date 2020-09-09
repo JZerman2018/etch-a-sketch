@@ -45,6 +45,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                withAWS(credentials: 'aws-static', region: 'us-east-1') {
+                sh "aws eks --region us-east-1 update-kubeconfig --name devopscapstone"
+                sh "kubectl config use-context arn:aws:eks:us-east-1:766162985452:cluster/devopscapstone"
                 sh './run_kubernetes.sh'
             }
         }
