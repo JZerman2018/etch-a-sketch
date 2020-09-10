@@ -15,7 +15,7 @@ This project was originally a version of an etch-a-sketch using JavaScript. It w
 
 #### Screenshot
 
-![my screenshot](Screenshots\DNSWebpage(5).png)
+![](https://i.imgur.com/VNrbKA6.png)
 
 ## Dependencies
 
