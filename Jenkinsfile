@@ -6,11 +6,6 @@ pipeline {
                 sh 'echo Building...'
               }
          }
-        //  stage('Lint HTML') {
-        //       steps {
-        //           sh 'tidy -q -e *.html'
-        //       }
-        //  }
          stage ('Lint Dockerfile') {
             agent {
                 docker {
@@ -26,11 +21,6 @@ pipeline {
                 }
             }
         }
-        // stage('Aqua Microscanner Security Scan') {
-        //       steps {
-        //          aquaMicroscanner imageName: 'node:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
-        //       }
-        //  }
         stage('Build Docker Image') {
             steps {
                 sh './run_docker.sh'
