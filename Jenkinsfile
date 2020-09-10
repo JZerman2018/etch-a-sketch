@@ -26,11 +26,11 @@ pipeline {
                 }
             }
         }
-        // stage('Aqua Microscanner Security Scan') {
-        //       steps {
-        //          aquaMicroscanner imageName: 'node:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
-        //       }
-        //  }
+        stage('Aqua Microscanner Security Scan') {
+              steps {
+                 aquaMicroscanner imageName: 'node:latest', notCompliesCmd: 'exit 1', onDisallowed: 'fail', outputFormat: 'html'
+              }
+         }
         stage('Build Docker Image') {
             steps {
                 sh './run_docker.sh'
@@ -53,13 +53,14 @@ pipeline {
                 sh "kubectl get deployments"
                 sh "kubectl get pod -o wide"
                 sh "kubectl get svc"
+                sh "kubectl describe svc/devopscapstone-service"
             }
         }
     }
         stage('Clean Up System') {
             steps {
                 echo 'Cleaning up...'
-                sh "docker system prune"
+                sh "docker system prune -y"
             }
         }
     }
