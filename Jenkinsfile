@@ -14,11 +14,11 @@ pipeline {
          stage ('Lint Dockerfile') {
             agent {
                 docker {
-                    image 'hadolint/hadolint:latest-debian'
+                    image ''
                 }
             }
             steps {
-                sh 'hadolint .///Dockerfile | tee -a hadolint_lint.txt'
+                sh 'hadolint ./Dockerfile | tee -a hadolint_lint.txt'
             }
             post {
                 always {
