@@ -53,7 +53,7 @@ pipeline {
                 sh "kubectl get deployments"
                 sh "kubectl get pod -o wide"
                 sh "kubectl get svc"
-                sh "kubectl describe svc/devopscapstone-service"
+                sh "kubectl describe svc"
             }
         }
     }
